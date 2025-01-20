@@ -1,9 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:fromscratchflutter/httpHello.dart';
+import 'package:fromscratchflutter/views/json_placeholder_views.dart';
 import 'package:fromscratchflutter/widgets/shadow.dart';
-import 'package:fromscratchflutter/widgets/tabbar_view.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Material App',
       home: Scaffold(
-        body: HttpHelloView(),
+        body: JsonPlaceholderViews(),
       ),
     );
   }

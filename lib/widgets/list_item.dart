@@ -16,8 +16,8 @@ class CardListItem extends StatelessWidget {
       child: Card(
         child: ListTile(
           //onTap: onPress,
-          title: Text(title ?? ""),
-          trailing: Icon(icons ?? Icons.warning),
+          title: Text(title),
+          trailing: Icon(icons),
         ),
       ),
     );

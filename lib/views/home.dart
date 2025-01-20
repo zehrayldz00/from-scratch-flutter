@@ -26,8 +26,7 @@ class _HomeViewState extends State<HomeView> with AutomaticKeepAliveClientMixin{
     _textEditingController.dispose();
   }
 
-  @override
-  Widget build(BuildContext context) {
+  Widget (BuildContext context) {
     return Scaffold(
       body: Container(
           color: _isDark ? Colors.red : Colors.black,
