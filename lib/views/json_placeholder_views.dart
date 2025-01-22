@@ -49,6 +49,5 @@ class _JsonPlaceholderViewsState extends State<JsonPlaceholderViews> {
     } else {
       return Center(child: CircularProgressIndicator(),);
     }
-  } //28.30
-  );
+  } );
 }
