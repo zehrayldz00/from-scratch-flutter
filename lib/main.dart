@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:fromscratchflutter/views/form_view.dart';
 import 'package:fromscratchflutter/views/json_placeholder_views.dart';
 import 'package:fromscratchflutter/widgets/shadow.dart';
 
@@ -11,6 +12,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
+      routes : {
+        "/home": (context) => JsonPlaceholderViews(),
+        "/": (context) => FormView(), //3:53
+      },
       home: Scaffold(
         body: JsonPlaceholderViews(),
       ),
