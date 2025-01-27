@@ -10,7 +10,6 @@ class FormView extends StatefulWidget {
 class _FormViewState extends State<FormView> {
 
   final formKey = GlobalKey<FormState>();
-  //final scaffoldKey = GlobalKey<ScaffoldState>();
   final _textFieldUserName = TextEditingController();
 
   @override
@@ -54,8 +53,12 @@ class _FormViewState extends State<FormView> {
                   if(formKey.currentState!.validate()){
                     print("okey");
                   }else{
-                    /*scaffoldKey.currentState.showSnackBar(SnackBar(
-                      content : Text("Error"),));*/
+                    ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content : Text("Error"),
+                          duration : Duration(seconds : 2)
+                        )
+                    );
                     print("error");
                   }
                 },
@@ -68,7 +71,6 @@ class _FormViewState extends State<FormView> {
   }
   @override
   void dispose() {
-   // scaffoldKey.currentState.dispose();
     formKey.currentState!.dispose();
     super.dispose();
   }
