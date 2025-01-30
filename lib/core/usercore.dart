@@ -8,5 +8,4 @@ class BaseViewModel{
   }
 
   BaseViewModel(this.context); // Bunu yapmak kesin bunu alacağını söylemek olduğu için null safety için bir şey yapmaya gerek yok.
-
 }

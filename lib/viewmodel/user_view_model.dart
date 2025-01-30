@@ -1,0 +1,4 @@
+
+
+
+class UserViewModel extends BaseViewModel{}
