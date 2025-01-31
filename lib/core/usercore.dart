@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
 class BaseViewModel{
+  String? text;
+  String? name;
   BuildContext context; // Sayfalar BuildContextten türer.
 
   void setContext(){
