@@ -8,6 +8,6 @@ class UserViewModel extends BaseViewModel{
   UserViewModel(BuildContext context) : super(context);
 
   @override
-  String? get name => super.name;
+  String? get name => super.name; //7.47
 
 }
