@@ -1,13 +1,14 @@
 import 'package:flutter/cupertino.dart';
 
-class BaseViewModel{
-  String? text;
-  String? name;
+abstract class BaseViewModel{
+  String? _name;
   BuildContext context; // Sayfalar BuildContextten türer.
 
-  void setContext(){
-    this.context = context;
+  String getFullUserName (String name) {
+    return _name! + name;
   }
 
-  BaseViewModel(this.context); // Bunu yapmak kesin bunu alacağını söylemek olduğu için null safety için bir şey yapmaya gerek yok.
+  void setGlobalKey(String id);
+
+  BaseViewModel(this.context, this._name); // Bunu yapmak kesin bunu alacağını söylemek olduğu için null safety için bir şey yapmaya gerek yok.
 }
