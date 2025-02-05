@@ -10,6 +10,6 @@ class PageViewZGY extends StatefulWidget {
 class _PageViewZGYState extends State<PageViewZGY> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold();
   }
 }
