@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
+import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:http/http.dart' as http;
 
@@ -28,7 +29,7 @@ class _FileDownloadViewState extends State<FileDownloadView> {
 
 
   Future _downloadSamplePDF() async{
-    final _response = await http.get(Uri.parse('https://pdfobject.com/pdf/sample.pdf'));
+    final _response = await http.get(Uri.parse('https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'));
     if(_response.statusCode == 200){
       final _saveFile = await _localFile;
       await _saveFile.writeAsBytes(_response.bodyBytes); // yanıt başarılı ise pdfin byte verileri alınır. ve pdf cihaza kaydedilir.
@@ -54,6 +55,12 @@ class _FileDownloadViewState extends State<FileDownloadView> {
                 icon: Icon(Icons.file_download),
             ),
             Text(_filePath),
+            IconButton(
+              onPressed: (){
+                OpenFile.open(_filePath, type:"text/plain");
+              },
+              icon: Icon(Icons.file_open),
+            ),
           ],
         ),
       ),
