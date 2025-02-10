@@ -5,6 +5,7 @@ import 'package:fromscratchflutter/views/file_download_view.dart';
 import 'package:fromscratchflutter/views/form_view.dart';
 import 'package:fromscratchflutter/views/json_placeholder_views.dart';
 import 'package:fromscratchflutter/views/page_view.dart';
+import 'package:fromscratchflutter/views/sliver_view.dart';
 import 'package:fromscratchflutter/widgets/shadow.dart';
 import 'package:fromscratchflutter/views/firebase_view.dart';
 
@@ -18,9 +19,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
-      initialRoute : "/file",
+      initialRoute : "/sliver",
       routes : {
         "/http" : (context) => HttpHelloView(),
+        "/sliver" : (context) => SliverView(),
         "/pageview" : (context) => PageViewZGY(),
         "/home": (context) => JsonPlaceholderViews(),
         "/": (context) => FormView(),
