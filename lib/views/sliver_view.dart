@@ -14,12 +14,13 @@ class _SliverViewState extends State<SliverView> {
       body: CustomScrollView(
         //normalde olan her sey var ama ekstra olarak sliver componentlerine erişebiliyoruz.
         slivers: [
-          //normal appbar atarsak patlar cünkü sliver devrede
+          //normal appbar atarsak patlar cünkü sliver devrede SliverAppBar kullanılır.
           SliverAppBar(
               backgroundColor: Colors.tealAccent,
               expandedHeight: 200,
               floating: true,
               pinned: true,
+              snap :true,
               flexibleSpace: FlexibleSpaceBar(
                 title: Text(
                   "Hello",

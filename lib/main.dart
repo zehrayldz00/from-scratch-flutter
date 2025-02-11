@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
         "/firebase": (context) => FireBaseBookView(),
         "/file" : (context) => FileDownloadView(),
       },
+      //onGenerateRoute:
     );
   }
 }
