@@ -25,6 +25,7 @@ class _SliverViewState extends State<SliverView> {
                 title: Text(
                   "Hello",
                 ),
+                collapseMode: CollapseMode.parallax,
                 centerTitle: false,
                 background: Image.network(
                   "https://picsum.photos/200/300",

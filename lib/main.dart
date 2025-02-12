@@ -30,7 +30,13 @@ class MyApp extends StatelessWidget {
         "/firebase": (context) => FireBaseBookView(),
         "/file" : (context) => FileDownloadView(),
       },
-      //onGenerateRoute:
+        onGenerateRoute: (RouteSettings routeSettings){
+          if (routeSettings.name == "/veli"){
+            return MaterialPageRoute(builder: (context) => SliverView(),);
+          }
+          return null;
+        }
+
     );
   }
 }
