@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:fromscratchflutter/httpHello.dart';
 import 'package:fromscratchflutter/views/collapse_view.dart';
 import 'package:fromscratchflutter/views/file_download_view.dart';
-import 'package:fromscratchflutter/views/home.dart';
 import 'package:fromscratchflutter/views/json_placeholder_views.dart';
 import 'package:fromscratchflutter/views/page_view.dart';
 import 'package:fromscratchflutter/views/routing/detail_view.dart';
+import 'package:fromscratchflutter/views/routing/home_view.dart';
 import 'package:fromscratchflutter/views/sliver_view.dart';
 import 'package:fromscratchflutter/widgets/shadow.dart';
 import 'package:fromscratchflutter/views/firebase_view.dart';
@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Material App',
       initialRoute : "/",
       routes : {
@@ -26,11 +27,11 @@ class MyApp extends StatelessWidget {
         "/sliver" : (context) => SliverView(),
         "/pageview" : (context) => PageViewZGY(),
         "/home": (context) => JsonPlaceholderViews(),
-        "/": (context) => HomeView(),
+        "/": (context) => HomeViewZGY(),
         "/collapse" : (context) => CollapseView(),
         "/firebase": (context) => FireBaseBookView(),
         "/file" : (context) => FileDownloadView(),
-        //"/routehome" : (context) => HomeView(),
+        "/routehome" : (context) => HomeViewZGY(),
         "/routedetail" : (context) => DetailView(),
       },
         /*onGenerateRoute: (RouteSettings routeSettings){
