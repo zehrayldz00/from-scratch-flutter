@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fromscratchflutter/views/hero/hero_detail.dart';
 
 class HeroView extends StatefulWidget {
   const HeroView({super.key});
@@ -10,6 +11,23 @@ class HeroView extends StatefulWidget {
 class _HeroViewState extends State<HeroView> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Column(
+        children: [
+          Expanded(
+            child: Center(child: InkWell(
+                onTap: () {
+                  // Burada neden pushNamed kullanılamıyor?
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => HeroDetailView())); //4.13
+                },
+                child: Text("Welcome"))),
+          ),
+          Expanded(child: Placeholder()),
+          Expanded(
+            child: Icon(Icons.traffic),
+          ),
+        ],
+      ),
+    );
   }
 }
