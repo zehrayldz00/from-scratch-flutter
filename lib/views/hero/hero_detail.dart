@@ -10,7 +10,7 @@ class HeroDetailView extends StatelessWidget {
         backgroundColor: Colors.grey,
       ),
       body: Center(
-        child: Text("Welcome"),
+        child: Hero(tag: "hero1", child: Material(child: Text("Welcome"))),
       ),
     );
   }
