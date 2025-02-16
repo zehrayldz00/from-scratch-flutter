@@ -9,6 +9,7 @@ class HeroView extends StatefulWidget {
 }
 
 class _HeroViewState extends State<HeroView> {
+  late int selectedValue;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +27,24 @@ class _HeroViewState extends State<HeroView> {
                     },
                     child: Text("Welcome"))),
           ),
-          Expanded(child: Placeholder()),
+          Expanded(child: Container(
+            child: Card(
+              child: DropdownButton <int> ( // neyi cast edeceğini yazman gerekiyor.
+                hint: Text("Select your currency"),
+                value: selectedValue,
+                  items: [
+                    DropdownMenuItem(child: Text("TR"),value: 1),
+                    DropdownMenuItem(child: Text("EUR"),value: 6),
+                    DropdownMenuItem(child: Text("USD"),value: 5),
+                  ],
+                  onChanged: (val){
+                  setState(() {
+                    //selectedValue = val! ?? selectedValue = 1;
+                  });
+                  }
+              ),
+            ),
+          )),
           Expanded(
             //tıklanması gereken icona tıklanmıyor??
             child: Hero(tag: "hero1", child: Icon(Icons.traffic)),
