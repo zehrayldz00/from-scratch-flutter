@@ -9,10 +9,13 @@ class HeroView extends StatefulWidget {
 }
 
 class _HeroViewState extends State<HeroView> {
-  late int selectedValue;
+  int? selectedValue;
+  GlobalKey<ScaffoldState> key = GlobalKey(debugLabel: "scaffoldKey");
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: key,
       body: Column(
         children: [
           Expanded(
@@ -27,28 +30,41 @@ class _HeroViewState extends State<HeroView> {
                     },
                     child: Text("Welcome"))),
           ),
-          Expanded(child: Container(
+          Expanded(
+              child: Container(
             child: Card(
-              child: DropdownButton <int> ( // neyi cast edeceğini yazman gerekiyor.
-                hint: Text("Select your currency"),
-                value: selectedValue,
+              child: DropdownButton<int>(
+                  // neyi cast edeceğini yazman gerekiyor.
+                  hint: Text("Select your currency"),
+                  value: selectedValue,
                   items: [
-                    DropdownMenuItem(child: Text("TR"),value: 1),
-                    DropdownMenuItem(child: Text("EUR"),value: 6),
-                    DropdownMenuItem(child: Text("USD"),value: 5),
+                    DropdownMenuItem(child: Text("TR"), value: 1),
+                    DropdownMenuItem(child: Text("EUR"), value: 6),
+                    DropdownMenuItem(child: Text("USD"), value: 5),
                   ],
-                  onChanged: (val){
-                  setState(() {
-                    //selectedValue = val! ?? selectedValue = 1;
-                  });
-                  }
-              ),
+                  onChanged: (val) {
+                    setState(() {
+                      selectedValue = val;
+                    });
+                  }),
             ),
           )),
           Expanded(
-            //tıklanması gereken icona tıklanmıyor??
-            child: Hero(tag: "hero1", child: Icon(Icons.traffic)),
-          ),
+              //tıklanması gereken icona tıklanmıyor??
+              child: Column(
+            children: [
+              Hero(tag: "hero1", child: Icon(Icons.traffic)),
+              ElevatedButton(
+                onPressed: () {
+                  key.currentState?.showBottomSheet(
+                    (context) => Text(
+                        "aa"), // şu an görmüyor çünkü alt alta tanımlayınca genelde böyle oluyor o yüzden dışarda bir GlobalKey tanımladık.
+                  );
+                },
+                child: null,
+              )
+            ],
+          )),
         ],
       ),
     );
