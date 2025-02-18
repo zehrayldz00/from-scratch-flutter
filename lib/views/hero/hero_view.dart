@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fromscratchflutter/views/hero/hero_detail.dart';
 
@@ -56,12 +57,23 @@ class _HeroViewState extends State<HeroView> {
               Hero(tag: "hero1", child: Icon(Icons.traffic)),
               ElevatedButton(
                 onPressed: () {
-                  key.currentState?.showBottomSheet(
-                    (context) => Text(
-                        "aa"), // şu an görmüyor çünkü alt alta tanımlayınca genelde böyle oluyor o yüzden dışarda bir GlobalKey tanımladık.
-                  );
+                  key.currentState?.showBottomSheet((context) => Container(
+                            height: 100,
+                            child: CupertinoPicker(
+                                itemExtent: 50,
+                                onSelectedItemChanged: (val) {
+                                  Navigator.of(context).pop(); // burası nasıl olacak?
+                                },
+                                children: [
+                                  Text("1"),
+                                  Text("2"),
+                                  Text("3"),
+                                ]),
+                            color: Colors.redAccent,
+                          ) // şu an görmüyor çünkü alt alta tanımlayınca genelde böyle oluyor o yüzden dışarda bir GlobalKey tanımladık.
+                      );
                 },
-                child: null,
+                child: null, //14.04
               )
             ],
           )),
