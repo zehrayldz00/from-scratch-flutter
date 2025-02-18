@@ -23,7 +23,6 @@ class _HeroViewState extends State<HeroView> {
             child: Center(
                 child: InkWell(
                     onTap: () {
-                      // Burada neden pushNamed kullanılamıyor?
                       Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -51,13 +50,12 @@ class _HeroViewState extends State<HeroView> {
             ),
           )),
           Expanded(
-              //tıklanması gereken icona tıklanmıyor??
               child: Column(
             children: [
               Hero(tag: "hero1", child: Icon(Icons.traffic)),
               ElevatedButton(
                 onPressed: () {
-                  key.currentState?.showBottomSheet((context) => Container(
+                  Scaffold.of(context).showBottomSheet((context) => Container( //bunun yerine showModalBottomSheet kullanabiliriz.
                             height: 100,
                             child: CupertinoPicker(
                                 itemExtent: 50,
@@ -73,7 +71,7 @@ class _HeroViewState extends State<HeroView> {
                           ) // şu an görmüyor çünkü alt alta tanımlayınca genelde böyle oluyor o yüzden dışarda bir GlobalKey tanımladık.
                       );
                 },
-                child: null, //14.04
+                child: null,
               )
             ],
           )),
