@@ -39,6 +39,7 @@ dependencies:
   path_provider: ^2.1.5
   logger: ^2.5.0
   open_file: ^3.5.10
+  shared_preferences: ^2.5.2
 
 dev_dependencies:
   flutter_test:

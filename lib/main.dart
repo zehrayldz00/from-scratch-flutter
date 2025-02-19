@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fromscratchflutter/httpHello.dart';
+import 'package:fromscratchflutter/preferences/shared_view.dart';
 import 'package:fromscratchflutter/views/collapse_view.dart';
 import 'package:fromscratchflutter/views/file_download_view.dart';
 import 'package:fromscratchflutter/views/hero/hero_detail.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      initialRoute : "/hero",
+      initialRoute : "/shared",
       routes : {
         "/http" : (context) => HttpHelloView(),
         "/sliver" : (context) => SliverView(),
@@ -36,7 +37,8 @@ class MyApp extends StatelessWidget {
         "/routehome" : (context) => HomeViewZGY(),
         "/routedetail" : (context) => DetailView(),
         "/hero" : (context) => HeroView(),
-        "herodetail" : (context) => HeroDetailView(),
+        "/herodetail" : (context) => HeroDetailView(),
+        "/shared" : (context) => SharedView(),
       },
         /*onGenerateRoute: (RouteSettings routeSettings){
           if (routeSettings.name == "/veli"){
