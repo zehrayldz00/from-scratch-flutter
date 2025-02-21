@@ -8,6 +8,7 @@ import 'package:fromscratchflutter/views/hero/hero_view.dart';
 import 'package:fromscratchflutter/views/json_placeholder_views.dart';
 import 'package:fromscratchflutter/views/page_view.dart';
 import 'package:fromscratchflutter/views/routing/detail_view.dart';
+import 'package:fromscratchflutter/views/routing/flutter_state_view.dart';
 import 'package:fromscratchflutter/views/routing/home_view.dart';
 import 'package:fromscratchflutter/views/sliver_view.dart';
 import 'package:fromscratchflutter/widgets/shadow.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      initialRoute : "/shared",
+      initialRoute : "/advancedstate",
       routes : {
         "/http" : (context) => HttpHelloView(),
         "/sliver" : (context) => SliverView(),
@@ -39,6 +40,7 @@ class MyApp extends StatelessWidget {
         "/hero" : (context) => HeroView(),
         "/herodetail" : (context) => HeroDetailView(),
         "/shared" : (context) => SharedView(),
+        "/advancedstate" : (context) => AdvancedStateView(),
       },
         /*onGenerateRoute: (RouteSettings routeSettings){
           if (routeSettings.name == "/veli"){
