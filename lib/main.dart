@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fromscratchflutter/httpHello.dart';
 import 'package:fromscratchflutter/preferences/shared_view.dart';
 import 'package:fromscratchflutter/views/collapse_view.dart';
+import 'package:fromscratchflutter/views/combo/banner_table_view.dart';
 import 'package:fromscratchflutter/views/combo/popup_chip_view.dart';
 import 'package:fromscratchflutter/views/file_download_view.dart';
 import 'package:fromscratchflutter/views/hero/hero_detail.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      initialRoute : "/popupchip",
+      initialRoute : "/bannertable",
       routes : {
         "/http" : (context) => HttpHelloView(),
         "/sliver" : (context) => SliverView(),
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
         "/shared" : (context) => SharedView(),
         "/advancedstate" : (context) => AdvancedStateView(),
         "/popupchip" : (context) => PopupChipView(),
+        "/bannertable" : (context) => BannerTableView()
       },
         /*onGenerateRoute: (RouteSettings routeSettings){
           if (routeSettings.name == "/veli"){
